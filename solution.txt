@@ -1,2 +1,18 @@
-Please add your pseudocode to this file
-And a written explanation of your solution
+### Pseudocode
+
+1. Create an empty array named `result` to store the substrings.
+2. Loop through each character of the input string using an index `i` (starting from 0 up to the length of the string).
+3. For each starting index `i`, create a second loop with index `j` (starting from `i + 1` up to the total length of the string inclusive).
+4. Inside the inner loop, extract the substring from the input string starting at index `i` and ending just before index `j`.
+5. Push the extracted substring into the `result` array.
+6. After both loops finish, return the `result` array.
+
+### Explanation of Solution
+
+The solution uses a nested loop approach to find every possible contiguous substring:
+
+- The **outer loop** determines the starting position of a substring.
+- The **inner loop** determines the ending position.
+- By using `string.slice(i, j)`, we capture the sequence of characters between these two points.
+- This ensures that we get all consecutive sequences (like 'a', 'ab', 'abc') in the exact order the problem requires: starting from the first character and expanding, then moving to the second character and expanding, and so on.
+- The time complexity of this solution is O(n²), where n is the length of the string, because we visit almost every pair of start and end indices.
